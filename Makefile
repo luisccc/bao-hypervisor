@@ -11,6 +11,7 @@ define current_directory
 $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 endef
 
+CROSS_COMPILE=/home/luis/riscv64-unknown-elf-toolchain-10.2.0/bin/riscv64-unknown-elf-
 # Check cross compiler
 ifneq ($(findstring clang,$(CROSS_COMPILE)),)
 CC_IS_CLANG =	y
@@ -49,8 +50,8 @@ HOST_CC:=gcc
 #Makefile arguments and default values
 DEBUG:=n
 OPTIMIZATIONS:=2
-CONFIG=
-PLATFORM=
+CONFIG=baremetal
+PLATFORM=qemu-riscv64-virt
 
 # Setup version
 

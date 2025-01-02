@@ -42,4 +42,11 @@ void vmm_arch_init()
     /**
      * TODO: consider delegating other exceptions e.g. breakpoint or ins misaligned
      */
+    /**
+     * TODO: consider delegating other exceptions e.g. breakpoint or ins
+     * misaligned
+     */
+    csrs_hslwid_write(65);
+    csrs_hwiddeleg_write(0x180);
+    csrs_hwiddelegh2_write(0x186);
 }
